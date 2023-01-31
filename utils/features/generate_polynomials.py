@@ -5,8 +5,9 @@ from .normalize import normalize
 
 
 def generate_polynomials(dataset, polynomial_degree, normalize_data=False):
-    """变换方法：
-    x1, x2, x1^2, x2^2, x1*x2, x1*x2^2, etc.
+    """变换方法：如果dataset仅包含两个特征x1和x2并且polynomial_degre=6，那么会增加特征
+    x1, x2, x1^2, x2^2, x1*x2, x1*x2^2
+    如果polynomial_degree的值更大，会产生更多的特征值
     """
 
     features_split = np.array_split(dataset, 2, axis=1)
